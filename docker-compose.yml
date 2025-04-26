@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: clojure_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: clojure_user
+      POSTGRES_PASSWORD: clojure_pass
+      POSTGRES_DB: todo_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
