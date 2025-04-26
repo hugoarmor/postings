@@ -1,6 +1,5 @@
 (ns postings.database.lib)
 
-
 (defn safe-query [f]
   (try
     {:ok (f)}

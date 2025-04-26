@@ -1,12 +1,12 @@
 (ns postings.core
-  (:require 
-            [clojure.tools.logging :as log]
-            [compojure.core :refer [defroutes]]
-            [compojure.route :as route]
-            [next.jdbc :as jdbc]
-            [postings.middleware :refer [wrap-json-body]]
-            [postings.routes :as routes]
-            [ring.adapter.jetty :refer [run-jetty]])
+  (:require
+   [clojure.tools.logging :as log]
+   [compojure.core :refer [defroutes]]
+   [compojure.route :as route]
+   [next.jdbc :as jdbc]
+   [postings.middleware :refer [wrap-json-body]]
+   [postings.routes :as routes]
+   [ring.adapter.jetty :refer [run-jetty]])
   (:gen-class))
 
 (def PORT 3000)
