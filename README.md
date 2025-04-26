@@ -1,22 +1,36 @@
 # postings
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure library designed to handle a simple posts implementation with a REST API and basic handlers for it.
 
-## Usage
+## Install
+First, make sure you have lein installed and run the following command:
 
-FIXME
+```bash
+lein deps
+```
 
-## License
+## Migration
+With your database up, run the following command:
 
-Copyright © 2025 FIXME
+```bash
+lein migratus migrate
+```
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
+For rollbacks:
+```bash
+lein migratus down
+```
 
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+Creating a new migration:
+```bash
+lein migratus create new-migration-name
+```
+
+## Running
+After installing the dependencies, run the following command:
+
+```bash
+lein run
+```
+
+You can access your api locally at http://localhost:3000
