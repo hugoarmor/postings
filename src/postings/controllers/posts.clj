@@ -25,9 +25,6 @@
   [{:keys [json-params params]} {:keys [ds]}]
   (let [id (some-> (:id params)
                    Integer/parseInt)]
-    (when-not id (throw (ex-info "Invalid ID" {})))
-    (when (empty? json-params)
-      (throw (ex-info "No fields provided to update" {})))
     (match (repo/change ds id json-params)
       {:ok _} {:status 201,
                :headers json-headers,
